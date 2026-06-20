@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  background-color: #EEF1EF;
+}
+
+body {
+  @apply font-body text-ink antialiased;
+}
+
+/* ---- Signature element: a stamped inventory tag, like a pallet placard ---- */
+.stamp {
+  @apply inline-flex items-center gap-1.5 rounded-sm border-2 px-2 py-0.5 font-mono text-[11px] font-medium uppercase tracking-widest2;
+  transform: rotate(-1deg);
+}
+
+.stamp-in-stock {
+  @apply stamp border-primary text-primary-dark bg-primary-light;
+}
+
+.stamp-low-stock {
+  @apply stamp border-accent text-[#7A5B00] bg-[#FEF9E7];
+}
+
+.stamp-out-of-stock {
+  @apply stamp border-alert text-alert bg-alert-light;
+}
+
+.panel {
+  @apply rounded-md border border-border bg-surface shadow-[0_1px_2px_rgba(20,24,27,0.04)];
+}
+
+.btn {
+  @apply inline-flex items-center justify-center gap-2 rounded-sm px-3.5 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50;
+}
+
+.btn-primary {
+  @apply btn bg-primary text-white hover:bg-primary-dark;
+}
+
+.btn-secondary {
+  @apply btn border border-border bg-surface text-ink hover:bg-base;
+}
+
+.btn-danger {
+  @apply btn border border-alert/30 bg-alert-light text-alert hover:bg-alert hover:text-white;
+}
+
+.field-label {
+  @apply mb-1 block text-xs font-medium uppercase tracking-wide text-muted;
+}
+
+.field-input {
+  @apply w-full rounded-sm border border-border bg-surface px-3 py-2 text-sm text-ink placeholder:text-muted/70 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20;
+}
+
+.data-table th {
+  @apply border-b border-border px-4 py-2.5 text-left font-mono text-[11px] font-medium uppercase tracking-wide text-muted;
+}
+
+.data-table td {
+  @apply border-b border-border/70 px-4 py-3 text-sm;
+}
